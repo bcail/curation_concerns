@@ -56,6 +56,11 @@ module CurationConcerns
       @fits_message_length ||= 5
     end
 
+    attr_writer :browse_everything
+    def browse_everything
+      @browse_everything ||= true
+    end
+
     attr_accessor :temp_file_base, :enable_local_ingest, :analytic_start_date,
                   :fits_to_desc_mapping, :max_days_between_audits,
                   :resource_types, :resource_types_to_schema,

@@ -10,3 +10,9 @@
 //= require bootstrap/tab
 //
 //= require curation_concerns/curation_concerns
+
+//
+// For Browse-everything until https://github.com/projecthydra-labs/browse-everything/issues/85 is resolved:
+//= require jquery.treetable
+//= require browse_everything/behavior
+//
