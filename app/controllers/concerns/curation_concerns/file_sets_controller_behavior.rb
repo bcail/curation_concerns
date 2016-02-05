@@ -10,6 +10,7 @@ module CurationConcerns
       load_and_authorize_resource class: ::FileSet, except: :show
       helper_method :curation_concern
       include CurationConcerns::ParentContainer
+      include CurationConcerns::BrowseEverything
       copy_blacklight_config_from(::CatalogController)
     end
 
@@ -156,8 +157,17 @@ module CurationConcerns
       end
 
       def file_set_params
-        params.require(:file_set).permit(
-          :visibility_during_embargo, :embargo_release_date, :visibility_after_embargo, :visibility_during_lease, :lease_expiration_date, :visibility_after_lease, :visibility, title: [])
+        params.permit(
+          :file_set,
+          :selected_files,
+          :visibility_during_embargo,
+          :embargo_release_date,
+          :visibility_after_embargo,
+          :visibility_during_lease,
+          :lease_expiration_date,
+          :visibility_after_lease,
+          :visibility,
+          title: [])
       end
 
       def version_list
