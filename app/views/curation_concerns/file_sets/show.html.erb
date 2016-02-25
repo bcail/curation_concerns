@@ -3,7 +3,7 @@
   <h1>File Details <small><%= @presenter.title %></small></h1>
 <% end %>
 <%= media_display @presenter %>
-<%= render "attributes", curation_concern: @presenter %>
+<%= render "attributes", presenter: @presenter %>
 
   <div class="form-actions">
     <%= link_to "Download this File", main_app.download_path(@presenter), class: 'btn btn-default' %>
